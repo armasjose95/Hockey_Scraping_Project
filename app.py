@@ -12,3 +12,15 @@ soup = BeautifulSoup(page.text, 'html')
 # html will parse the info in an html format
 
 print(soup.prettify())
+
+# soup.find('div') # this finds the first 'div' class
+
+
+# soup.find_all('div') # finds all 'div' on the page
+# a ',' comma separates each 'div' class
+
+
+soup.find_all('div', class_='col-md-12')  # returns just this information
+# you can return multiple if there is multiple
+
+soup.find_all('p')  # returns just this 'p' information
