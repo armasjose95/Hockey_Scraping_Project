@@ -53,7 +53,7 @@ column_data = table.find_all('tr')
 # as it gets looped through I'm finding all and looking for the td tags(individual data(row data))
 # then I'm taking each piece of data & getting out the text & stripping it to clean it
 # now in a list for each individual row
-for row in column_data:
+for row in column_data[0:]:
     row_data = row.find_all('td')
     individual_row_data = [data.text.strip() for data in row_data]
 
@@ -64,3 +64,6 @@ for row in column_data:
 length = len(df)
 df.loc[length] = individual_row_data
 df
+
+
+df.to_csv(r'/Users/josearmas/Desktop/Hockey_Scraping_Project\Teams.csv', index=False)
