@@ -2,11 +2,14 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+# sending an HTTP requests with Request and all I need to do is
+# set an URL and pass it through requests.get(),
+# store the returned HTML inside a page variable
+# and print response.status_code.
+
 url = 'http://www.scrapethissite.com/pages/forms/'
-
 page = requests.get(url)
-
-
+print(page.status_code)
 # <Response [200]>
 
 soup = BeautifulSoup(page.text, features="html.parser")
