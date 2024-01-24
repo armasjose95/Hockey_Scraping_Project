@@ -19,7 +19,6 @@ soup = BeautifulSoup(page.text, features="html.parser")
 
 table = soup.find('table', class_='table')
 
-
 # soup.find('th').text.strip()
 # = 'Team Name'
 
