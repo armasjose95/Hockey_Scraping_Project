@@ -9,22 +9,15 @@ import pandas as pd
 
 url = 'http://www.scrapethissite.com/pages/forms/'
 page = requests.get(url)
-print(page.status_code)
+# print(page.status_code)
 # <Response [200]>
-
 soup = BeautifulSoup(page.text, features="html.parser")
 # page is sending the request & html is retrieving raw html I am using
 # html will parse the info in an html format
-print(soup)
-
-soup.find('table')
+# print(soup)
 
 
-soup.find('table', class_='table')
-
-
-table = soup.find('table')
-print(table)
+table = soup.find('table', class_='table')
 
 
 # soup.find('th').text.strip()
