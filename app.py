@@ -23,12 +23,11 @@ table = soup.find('table', class_='table')
 # = 'Team Name'
 
 
-column_titles = table('th')
-print(column_titles)
-
 # looping through each column header/title[th tag] so I can loop trough to get each header/title
+column_titles = table.find_all('th')
+# print(column_titles)
 hockey_column_titles = [title.text.strip() for title in column_titles]
-print(hockey_column_titles)
+# print(hockey_column_titles)
 # ['Team Name', 'Year', 'Wins', 'Losses', 'OT Losses', 'Win %', 'Goals For (GF)', 'Goals Against (GA)', '+ / -']
 
 
